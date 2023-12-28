@@ -9,19 +9,10 @@ public class BinarySearchWord {
     public static void main(String[] args) {
         try {
             String filePath = "C:\\Documents\\wordlist.txt";
-
             String[] wordList = readWordListFromFile(filePath);
-
-            // Step 2: Sort the word list
             Arrays.sort(wordList);
-
-            // Step 3: Prompt user to enter a word to search
             String searchWord = getUserInput("Enter a word to search: ");
-
-            // Step 4: Perform binary search
             boolean isWordFound = binarySearch(wordList, searchWord);
-
-            // Step 5: Print the result
             if (isWordFound) {
                 System.out.println("The word \"" + searchWord + "\" is found in the list.");
             } else {
@@ -32,8 +23,6 @@ public class BinarySearchWord {
             e.printStackTrace();
         }
     }
-
-    // Read the list of words from a file
     private static String[] readWordListFromFile(String filename) throws IOException {
         try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
             String line = reader.readLine();
