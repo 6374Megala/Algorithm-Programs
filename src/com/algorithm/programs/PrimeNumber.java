@@ -51,17 +51,11 @@ public class PrimeNumber {
 
         return anagrams;
     }
-
-    // Function to check if two numbers are anagrams
     private static boolean areAnagrams(int num1, int num2) {
         String str1 = Integer.toString(num1);
         String str2 = Integer.toString(num2);
-
-        // Sort the digits of the numbers and check if they are equal
         return sortString(str1).equals(sortString(str2));
     }
-
-    // Helper function to sort characters in a string
     private static String sortString(String str) {
         char[] charArray = str.toCharArray();
         Arrays.sort(charArray);
